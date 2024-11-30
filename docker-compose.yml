@@ -14,3 +14,8 @@ services:
     volumes:
       - .:/usr/src/app
     restart: always
+    networks:
+      - serversignal_net
+networks:
+  serversignal_net:
+    driver: bridge
