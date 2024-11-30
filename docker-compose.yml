@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: .
+    ports:
+      - "9091:9091"
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - APPNAME=myapp
+      - DEPLOYMENT_MODE=local
+      - NEXT_PUBLIC_WEB_SOCKET=ws://192.168.0.113:9091
+    volumes:
+      - .:/usr/src/app
+    restart: always
